@@ -3,7 +3,6 @@ package uniandes.edu.co.demo.modelo;
 import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -13,42 +12,40 @@ import lombok.ToString;
 public class Prestacion {
 
     @Id
-    private Integer id_prestacion;
+    private String id_prestacion;
 
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm")
     private LocalDateTime fecha;
 
     private Boolean finalizado;
 
-    @DBRef
-    private Afiliado afiliado;
+    private String afiliado;
 
-    @DBRef
-    private OrdenServicio orden;
+    private String orden;
 
-    @DBRef
-    private Medico medico;
+    private String medico;
 
-    @DBRef
-    private IPS ips;
+    private String ips;
 
 
-    public Prestacion(LocalDateTime fechat, Boolean finalizadot, Afiliado afiliadot, OrdenServicio ordent, Medico medicot, IPS ipst) {
-        this.fecha = fechat;
-        this.finalizado = finalizadot;
-        this.afiliado = afiliadot;
-        this.orden = ordent;
-        this.medico = medicot;
-        this.ips = ipst;
+    public Prestacion(LocalDateTime fecha, Boolean finalizado, String afiliado, String orden, String medico, String ips) {
+        this.fecha = fecha;
+        this.finalizado = finalizado;
+        this.afiliado = afiliado;
+        this.orden = orden;
+        this.medico = medico;
+        this.ips = ips;
     }
 
+    public Prestacion(){}
 
-    public Integer getId_prestacion() {
+
+    public String getId_prestacion() {
         return id_prestacion;
     }
 
 
-    public void setId_prestacion(Integer id_prestacion) {
+    public void setId_prestacion(String id_prestacion) {
         this.id_prestacion = id_prestacion;
     }
 
@@ -72,34 +69,38 @@ public class Prestacion {
         this.finalizado = finalizado;
     }
 
-
-    public Afiliado getAfiliado() {
+    public String getAfiliado() {
         return afiliado;
     }
 
-
-    public void setAfiliado(Afiliado afiliado) {
+    public void setAfiliado(String afiliado) {
         this.afiliado = afiliado;
     }
 
-
-    public OrdenServicio getOrden() {
+    public String getOrden() {
         return orden;
     }
 
-
-    public void setOrden(OrdenServicio orden) {
+    public void setOrden(String orden) {
         this.orden = orden;
     }
 
-
-    public Medico getMedico() {
+    public String getMedico() {
         return medico;
     }
 
-
-    public void setMedico(Medico medico) {
+    public void setMedico(String medico) {
         this.medico = medico;
     }
- 
+
+    public String getIps() {
+        return ips;
+    }
+
+    public void setIps(String ips) {
+        this.ips = ips;
+    }
+
+    
+    
 }

@@ -10,28 +10,28 @@ import uniandes.edu.co.demo.modelo.Prestacion;
 import uniandes.edu.co.demo.modelo.Servicio;
 import uniandes.edu.co.demo.modelo.TipoServicio;
 
-public interface ServicioRepository extends MongoRepository<Servicio, Integer>{
+public interface ServicioRepository extends MongoRepository<Servicio, String>{
 
     @Query(value = "{}")
     List<Servicio> buscarServicios();
 
     @Query("{_id:?0}")
-    List<Servicio> buscarServicios (Integer id);
+    List<Servicio> buscarServicios (String id);
 
     default void insertarServicios(Servicio servicio){
         save(servicio);
     }
 
-    @Query("{id: ?0}")
+    @Query("{_id: ?0}")
     @Update("{ $set: { tipoServicio: ?1,  nombre: ?2, prestaciones: ?3} }")
-    void actualizarServicio (Integer id_servicio, TipoServicio tipoServicio, String nombre, List<Prestacion> prestaciones);
+    void actualizarServicio (String id_servicio, TipoServicio tipoServicio, String nombre, List<Prestacion> prestaciones);
 
     @Query(value = "{_id:?0}", delete = true)
-    void eliminarServicio(Integer id);
+    void eliminarServicio(String id);
 
 
     //Obtener Ordenes de servicio
     @Query (value = "{_id: ?0}")
-    List<Prestacion> obtenerPrestaciones(Integer id);
+    List<Prestacion> obtenerPrestaciones(String id);
     
 } 

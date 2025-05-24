@@ -1,10 +1,13 @@
 package uniandes.edu.co.demo.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,18 +27,26 @@ public class ServicioController {
     private ServicioRepository servicioRepository;
 
     @PostMapping("/new/save")
-    public ResponseEntity<String>  crearServicio (@RequestBody Servicio servicio) {
+    public ResponseEntity<Map<String, String>>  crearServicio (@RequestBody Servicio servicio) {
         try {
 
-            servicioRepository.insertarServicios(servicio);;
-            return new ResponseEntity<>("Servicio creado exitosamente", HttpStatus.CREATED);
-        } catch (Exception e) {;
-            return new ResponseEntity<>("Error al crear el servicio: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+            servicioRepository.insertarServicios(servicio);
+            Map<String, String> response = new HashMap<>();
+            response.put("mensaje", "Servicio creado exitosamente");
+
+            response.put("servicio_id", servicio.getId_servicio());
+            return new ResponseEntity<>(response, HttpStatus.CREATED);
+        } catch (Exception e) {
+            System.out.println(e);
+            Map<String, String> response = new HashMap<>();
+            response.put("mensaje", "Error al crear el servicio: " + e.getMessage());
+            response.put("servicio_id", null);
+            return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
     @PostMapping("/{id}/edit/save")
-    public ResponseEntity<String> actualizarServicio(@PathVariable("id") Integer id, @RequestBody Servicio servicio) {
+    public ResponseEntity<String> actualizarServicio(@PathVariable("id") String id, @RequestBody Servicio servicio) {
         try {
             servicioRepository.actualizarServicio(
                 id, 
@@ -59,7 +70,7 @@ public class ServicioController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<List<Servicio>> obtenerServicio(@PathVariable("id") Integer id) {
+    public ResponseEntity<List<Servicio>> obtenerServicio(@PathVariable("id") String id) {
         try {
             List<Servicio> servicio = servicioRepository.buscarServicios(id);
             if (servicio != null && !servicio.isEmpty()) {
@@ -72,8 +83,8 @@ public class ServicioController {
         }
     }
 
-    @GetMapping("/{id}/delete")
-    public ResponseEntity<String> afiliadoEliminar(@PathVariable("id") Integer id) {
+    @DeleteMapping("/{id}/delete")
+    public ResponseEntity<String> afiliadoEliminar(@PathVariable("id") String id) {
         try {
             servicioRepository.eliminarServicio(id);
             return new ResponseEntity<>("Servicio eliminado exitosamente", HttpStatus.OK);

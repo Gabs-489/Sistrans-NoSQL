@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import uniandes.edu.co.demo.modelo.Afiliado;
 import uniandes.edu.co.demo.repository.AfiliadoRepository;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -80,7 +81,7 @@ public class AfiliadosController {
     }
 
     
-    @GetMapping("/{id}/delete")
+    @DeleteMapping("/{id}/delete")
     public ResponseEntity<String> afiliadoEliminar(@PathVariable("id") String id) {
         try {
             afiliadoRepository.eliminarAfiliado(id);

@@ -1,10 +1,13 @@
 package uniandes.edu.co.demo.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,13 +27,19 @@ public class MedicoController {
     private MedicoRepository medicoRepository;
 
     @PostMapping("/new/save")
-    public ResponseEntity<String>  crearMedico (@RequestBody Medico medico) {
+    public ResponseEntity<Map<String, String>>  crearMedico (@RequestBody Medico medico) {
         try {
 
             medicoRepository.insertarMedicos(medico);;
-            return new ResponseEntity<>("Medico creado exitosamente", HttpStatus.CREATED);
-        } catch (Exception e) {;
-            return new ResponseEntity<>("Error al crear el medico: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+            Map<String, String> response = new HashMap<>();
+            response.put("mensaje", "Medico creado exitosamente");
+            response.put("numero_documento", medico.getNumero_documento());
+            return new ResponseEntity<>(response, HttpStatus.CREATED);
+        } catch (Exception e) {
+            Map<String, String> response = new HashMap<>();
+            response.put("mensaje", "Error al crear el medico: " + e.getMessage());
+            response.put("numero_documento", null);
+            return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -43,7 +52,7 @@ public class MedicoController {
                 id, 
                 medico.getNombre(), 
                 medico.getTipo_documento(), 
-                medico.getNumero_registro(),
+                medico.getNum_registro(),
                 medico.getEspecialidades());
             return new ResponseEntity<>("Medico actualizado exitosamente", HttpStatus.OK);
         } catch (Exception e) {
@@ -75,7 +84,7 @@ public class MedicoController {
         }
     }
 
-    @GetMapping("/{id}/delete")
+    @DeleteMapping("/{id}/delete")
     public ResponseEntity<String> medicoEliminar(@PathVariable("id") String id) {
         try {
             medicoRepository.eliminarMedico(id);

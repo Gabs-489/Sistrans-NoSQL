@@ -46,6 +46,9 @@ public class Afiliado {
         this.relacion = relacion;
     }
 
+    public Afiliado(){}
+
+
     public String getNumero_documento() {
         return numero_documento;
     }

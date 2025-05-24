@@ -1,6 +1,8 @@
 package uniandes.edu.co.demo.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -8,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 
 import uniandes.edu.co.demo.modelo.IPS;
 import uniandes.edu.co.demo.repository.IPSRepository;
-
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,13 +26,21 @@ public class IPSController {
     private IPSRepository ipsRepository;
 
     @PostMapping("/new/save")
-    public ResponseEntity<String>  crearIPS (@RequestBody IPS ips) {
+    public ResponseEntity<Map<String, String>>  crearIPS (@RequestBody IPS ips) {
         try {
 
             ipsRepository.insertarIPS(ips);
-            return new ResponseEntity<>("IPS creado exitosamente", HttpStatus.CREATED);
-        } catch (Exception e) {;
-            return new ResponseEntity<>("Error al crear la IPS: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+
+            Map<String, String> response = new HashMap<>();
+            response.put("mensaje", "Medico creado exitosamente");
+            response.put("nit", ips.getNit());
+            return new ResponseEntity<>(response, HttpStatus.CREATED);
+        } catch (Exception e) {
+            System.out.println(e);
+            Map<String, String> response = new HashMap<>();
+            response.put("mensaje", "Error al crear el medico: " + e.getMessage());
+            response.put("nit", null);
+            return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -76,7 +86,7 @@ public class IPSController {
         }
     }
 
-    @GetMapping("/{id}/delete")
+    @DeleteMapping("/{id}/delete")
     public ResponseEntity<String> ipsEliminar(@PathVariable("id") String id) {
         try {
             ipsRepository.eliminarIPS(id);

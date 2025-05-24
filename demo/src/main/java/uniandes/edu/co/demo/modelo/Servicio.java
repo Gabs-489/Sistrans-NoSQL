@@ -12,24 +12,24 @@ import lombok.ToString;
 public class Servicio {
 
     @Id
-    private Integer id_servicio;
+    private String id_servicio;
 
     private String nombre;
     private TipoServicio tipo_servicio;
 
     private List<Prestacion> prestaciones;
     
-    public Servicio(Integer id_servicio, TipoServicio tipoServicio, String nombre){
-        this.id_servicio = id_servicio;
-        this.tipo_servicio = tipoServicio;
+    public Servicio(TipoServicio tipo_servicio, String nombre){
+        this.tipo_servicio = tipo_servicio;
         this.nombre = nombre;
     }
+    public Servicio(){}
 
-    public Integer getId_servicio() {
+    public String getId_servicio() {
         return id_servicio;
     }
 
-    public void setId_servicio(Integer id_servicio) {
+    public void setId_servicio(String id_servicio) {
         this.id_servicio = id_servicio;
     }
 

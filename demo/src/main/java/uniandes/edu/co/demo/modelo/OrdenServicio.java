@@ -42,6 +42,7 @@ public class OrdenServicio {
         this.cantidad = cantidad;
     }
 
+    public OrdenServicio(){}
 
     public Integer getId_Orden() {
         return id_Orden;

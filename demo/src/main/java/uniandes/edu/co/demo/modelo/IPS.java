@@ -1,9 +1,9 @@
 package uniandes.edu.co.demo.modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.ToString;
@@ -13,31 +13,26 @@ import lombok.ToString;
 public class IPS {
 
     @Id
-    private String NIT;
+    private String nit;
+
     private String nombre;
     private String direccion;
     private String telefono;
 
-    @DBRef
-    private List<Servicio> servicios;
+    private List<String> servicios = new ArrayList<>();;
 
-    @DBRef
-    private List<Medico> medicos;
+    private List<String> medicos = new ArrayList<>();;
 
-    public IPS(String NIT, String nombre, String direccion, String telefono){
-        this.NIT = NIT;
+    public IPS(String nit, String nombre, String direccion, String telefono){
+        this.nit = nit;
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
     }
 
-    public String getNIT() {
-        return NIT;
-    }
+    public IPS() {}
 
-    public void setNIT(String nIT) {
-        NIT = nIT;
-    }
+    
 
     public String getNombre() {
         return nombre;
@@ -63,20 +58,28 @@ public class IPS {
         this.telefono = telefono;
     }
 
-    public List<Servicio> getServicios() {
+    public List<String> getServicios() {
         return servicios;
     }
 
-    public void setServicios(List<Servicio> servicios) {
+    public void setServicios(List<String> servicios) {
         this.servicios = servicios;
     }
 
-    public List<Medico> getMedicos() {
+    public List<String> getMedicos() {
         return medicos;
     }
 
-    public void setMedicos(List<Medico> medicos) {
+    public void setMedicos(List<String> medicos) {
         this.medicos = medicos;
+    }
+
+    public String getNit() {
+        return nit;
+    }
+
+    public void setNit(String nit) {
+        this.nit = nit;
     }
 
     
