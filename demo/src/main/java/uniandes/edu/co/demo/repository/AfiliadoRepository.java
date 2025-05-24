@@ -25,7 +25,7 @@ public interface AfiliadoRepository extends MongoRepository<Afiliado, String> {
 
     @Query("{_id: ?0}")
     @Update("{ $set: { nombre: ?1,  tipo_documento: ?2, fecha_nacimiento: ?3, direccion: ?4, telefono: ?5, parentesco: ?6, tipo_relacion: ?7, ordenesServicios: ?8} }")
-    void actualizarAfiliado (String id, String nombre, String tipo_documento, LocalDate  fecha_nacimiento, String direccion, String  telefono, Afiliado parentesco_numero_documento, TipoRelacion tipo_relacion, List<OrdenServicio> ordenesServicio);
+    void actualizarAfiliado (String id, String nombre, String tipo_documento, LocalDate  fecha_nacimiento, String direccion, String  telefono, String parentesco_numero_documento, TipoRelacion tipo_relacion, List<OrdenServicio> ordenesServicio);
 
     @Query(value = "{_id:?0}", delete = true)
     void eliminarAfiliado(String id);

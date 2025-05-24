@@ -3,7 +3,6 @@ package uniandes.edu.co.demo.modelo;
 import java.time.LocalDate;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -24,15 +23,13 @@ public class OrdenServicio {
     private EstadoOrden estado;
     private Integer cantidad;
     private String descripcion;
-    
-    @DBRef
-    private Medico medico;
 
-    @DBRef
-    private Servicio servicio;
+    private String medico;
+
+    private String servicio;
 
     
-    public OrdenServicio(LocalDate fecha, EstadoOrden estado, String descripcion, Medico doctor,TipoOrden tipo, Servicio Servicios_ID, Afiliado afiliados_numero_documento, Integer cantidad) {
+    public OrdenServicio(LocalDate fecha, EstadoOrden estado, String descripcion, String doctor,TipoOrden tipo, String Servicios_ID,Integer cantidad) {
         this.fecha = fecha;
         this.estado = estado;
         this.tipo_orden = tipo;
@@ -104,22 +101,22 @@ public class OrdenServicio {
     }
 
 
-    public Medico getMedico() {
+    public String getMedico() {
         return medico;
     }
 
 
-    public void setMedico(Medico medico) {
+    public void setMedico(String medico) {
         this.medico = medico;
     }
 
 
-    public Servicio getServicio() {
+    public String getServicio() {
         return servicio;
     }
 
 
-    public void setServicio(Servicio servicio) {
+    public void setServicio(String servicio) {
         this.servicio = servicio;
     }
 

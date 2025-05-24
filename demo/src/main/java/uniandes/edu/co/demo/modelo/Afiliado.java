@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -27,15 +26,14 @@ public class Afiliado {
     private String  telefono;
 
     //Parentesco
-    @DBRef
-    private Afiliado parentesco;
+    private String parentesco;
     
     private TipoRelacion relacion;
 
     //Orden Servicio
     private List<OrdenServicio> ordenesServicios;
 
-    public Afiliado(String nombre, String tipo_documento, String numero_documento, LocalDate  fecha_nacimiento, String direccion, String  telefono, Afiliado parentesco_numero_documento, TipoRelacion relacion){
+    public Afiliado(String nombre, String tipo_documento, String numero_documento, LocalDate  fecha_nacimiento, String direccion, String  telefono, String parentesco_numero_documento, TipoRelacion relacion){
         this.nombre = nombre;
         this.tipo_documento = tipo_documento;
         this.numero_documento = numero_documento;
@@ -97,11 +95,11 @@ public class Afiliado {
         this.telefono = telefono;
     }
 
-    public Afiliado getParentesco() {
+    public String getParentesco() {
         return parentesco;
     }
 
-    public void setParentesco(Afiliado parentesco) {
+    public void setParentesco(String parentesco) {
         this.parentesco = parentesco;
     }
 
