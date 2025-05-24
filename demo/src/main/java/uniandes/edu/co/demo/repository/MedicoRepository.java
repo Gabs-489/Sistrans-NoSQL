@@ -14,7 +14,7 @@ public interface MedicoRepository extends MongoRepository<Medico, String>{
     List<Medico> buscarMedicos();
 
     @Query("{numero_documento:?0}")
-    List<Medico> buscarMedicos (String id);
+    List<Medico> buscarMedico (String id);
 
     default void insertarMedicos(Medico medico){
         save(medico);
