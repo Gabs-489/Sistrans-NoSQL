@@ -30,7 +30,7 @@ public interface ServicioRepository extends MongoRepository<Servicio, String>{
     void eliminarServicio(String id);
 
 
-    //Obtener Ordenes de servicio
+    //Obtener prestaciones
     @Query (value = "{_id: ?0}")
     List<Prestacion> obtenerPrestaciones(String id);
     

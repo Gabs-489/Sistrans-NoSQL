@@ -1,10 +1,14 @@
 package uniandes.edu.co.demo.controller;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import uniandes.edu.co.demo.modelo.Prestacion;
 import uniandes.edu.co.demo.modelo.Servicio;
 import uniandes.edu.co.demo.repository.ServicioRepository;
 
@@ -92,5 +97,70 @@ public class ServicioController {
             return new ResponseEntity<>("Error al eliminar el servicio", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @GetMapping("/{id}/prestaciones")
+    public ResponseEntity<List<Prestacion>> obtenerDisponibilidad(@PathVariable("id") String id) {
+        try {
+            List<Servicio> servicios = servicioRepository.buscarServicios(id);
+            if (servicios == null || servicios.isEmpty()) {
+                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Collections.emptyList());
+            } 
+            Servicio servicio = servicios.get(0);
+            LocalDateTime actual = LocalDateTime.now();
+            LocalDateTime enCuatroSemanas = actual.plusWeeks(4);
+
+
+            List<Prestacion> disponibles = new ArrayList<>();
+            for (Prestacion p : servicio.getPrestaciones()) {
+            if (!p.getFecha().isBefore(actual) && !p.getFecha().isAfter(enCuatroSemanas)) {
+            disponibles.add(p);
+            }
+        }
+            return ResponseEntity.ok(disponibles);
+
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+    
+    }
+    @PostMapping("/{id}/prestaciones/{fecha_hora}/agendar/{afiliado}")
+    public ResponseEntity<String> AgendarSinOrden(@PathVariable("id") String id, @PathVariable("fecha_hora") @DateTimeFormat(pattern = "dd-MM-yyyy HH:mm") LocalDateTime fecha_hora, @PathVariable("afiliado") String afiliado) {
+        try{
+            List<Servicio> servicios = servicioRepository.buscarServicios(id);
+            if (servicios == null || servicios.isEmpty()) {
+                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Servicio no encontrado con ID: " + id);
+            } 
+            Servicio servicio = servicios.get(0);
+            String tipo = servicio.getTipo_servicio().name();
+            if (!tipo.equalsIgnoreCase("CONSULTAMEDICOGENERAL") &&
+            !tipo.equalsIgnoreCase("CONSULTAURGENCIA")) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El servicio necesita una orden de servicio");
+            }
+
+            List<Prestacion> prestaciones = servicio.getPrestaciones();
+            for (Prestacion p : prestaciones) {
+                if (fecha_hora.equals(p.getFecha()) &&
+                    !p.getFinalizado() &&
+                    (p.getAfiliado() == null || p.getAfiliado().isEmpty())) {
+
+                    p.setAfiliado(afiliado);
+                    servicioRepository.save(servicio);
+
+                    return ResponseEntity.ok("Prestación agendada correctamente: " + p.getId_prestacion());
+                }
+            }
+            
+        } catch (Exception e) {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                            .body("Error al agendar la prestación: " + e.getMessage());
+    }
+        return null;
+        
+
+        
+        
+       
+    }
+    
 
 }
