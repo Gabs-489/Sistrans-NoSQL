@@ -1,0 +1,1224 @@
+[
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285442"
+    },
+    "nombre": "Dynah Sharvell",
+    "tipo_documento": "CC",
+    "numero_documento": "9991285613",
+    "num_registro": "1",
+    "especialidades": []
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285443"
+    },
+    "nombre": "Westleigh Bendare",
+    "tipo_documento": "TI",
+    "numero_documento": "971207187",
+    "num_registro": "2",
+    "especialidades": []
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285444"
+    },
+    "nombre": "Paula Twinning",
+    "tipo_documento": "TI",
+    "numero_documento": "7773283734",
+    "num_registro": "3",
+    "especialidades": [
+      "Infectología",
+      "Neurología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285445"
+    },
+    "nombre": "Sandie Webland",
+    "tipo_documento": "CC",
+    "numero_documento": "2933870388",
+    "num_registro": "4",
+    "especialidades": [
+      "Oftalmología",
+      "Urología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285446"
+    },
+    "nombre": "Ninetta Widdowson",
+    "tipo_documento": "CC",
+    "numero_documento": "6330179521",
+    "num_registro": "5",
+    "especialidades": [
+      "Urología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285447"
+    },
+    "nombre": "Cathlene Drewett",
+    "tipo_documento": "TI",
+    "numero_documento": "9572083514",
+    "num_registro": "6",
+    "especialidades": [
+      "Ginecología",
+      "Oncología",
+      "Nefrología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285448"
+    },
+    "nombre": "Hettie Leask",
+    "tipo_documento": "CC",
+    "numero_documento": "5693961541",
+    "num_registro": "7",
+    "especialidades": []
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285449"
+    },
+    "nombre": "Rancell Pawley",
+    "tipo_documento": "CC",
+    "numero_documento": "6606330727",
+    "num_registro": "8",
+    "especialidades": [
+      "Otorrinolaringología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28544a"
+    },
+    "nombre": "Fanya Sherington",
+    "tipo_documento": "CC",
+    "numero_documento": "8583721419",
+    "num_registro": "9",
+    "especialidades": [
+      "Nefrología",
+      "Psiquiatría",
+      "Oftalmología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28544b"
+    },
+    "nombre": "Herb Belcham",
+    "tipo_documento": "CC",
+    "numero_documento": "938352593",
+    "num_registro": "10",
+    "especialidades": []
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28544c"
+    },
+    "nombre": "Ezri Jefferies",
+    "tipo_documento": "TI",
+    "numero_documento": "6280475740",
+    "num_registro": "11",
+    "especialidades": [
+      "Dermatología",
+      "Psiquiatría",
+      "Cardiología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28544d"
+    },
+    "nombre": "Otho MacGorman",
+    "tipo_documento": "CC",
+    "numero_documento": "6673991747",
+    "num_registro": "12",
+    "especialidades": [
+      "Reumatología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28544e"
+    },
+    "nombre": "Annelise Overstall",
+    "tipo_documento": "CC",
+    "numero_documento": "345653175",
+    "num_registro": "13",
+    "especialidades": [
+      "Dermatología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28544f"
+    },
+    "nombre": "Winna Halleday",
+    "tipo_documento": "TI",
+    "numero_documento": "9917860078",
+    "num_registro": "14",
+    "especialidades": [
+      "Nefrología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285450"
+    },
+    "nombre": "Porter Hardan",
+    "tipo_documento": "TI",
+    "numero_documento": "1678469077",
+    "num_registro": "15",
+    "especialidades": []
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285451"
+    },
+    "nombre": "Esma Greenhill",
+    "tipo_documento": "CC",
+    "numero_documento": "3919355367",
+    "num_registro": "16",
+    "especialidades": [
+      "Urología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285452"
+    },
+    "nombre": "Marthe Hardes",
+    "tipo_documento": "TI",
+    "numero_documento": "2233778354",
+    "num_registro": "17",
+    "especialidades": [
+      "Oftalmología",
+      "Urología",
+      "Nefrología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285453"
+    },
+    "nombre": "Denna Whittaker",
+    "tipo_documento": "TI",
+    "numero_documento": "4711744210",
+    "num_registro": "18",
+    "especialidades": [
+      "Urología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285454"
+    },
+    "nombre": "Bernie Dries",
+    "tipo_documento": "CC",
+    "numero_documento": "7429122085",
+    "num_registro": "19",
+    "especialidades": [
+      "Otorrinolaringología",
+      "Psiquiatría"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285455"
+    },
+    "nombre": "Emanuele Acland",
+    "tipo_documento": "TI",
+    "numero_documento": "1422730232",
+    "num_registro": "20",
+    "especialidades": [
+      "Otorrinolaringología",
+      "Urología",
+      "Psiquiatría"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285456"
+    },
+    "nombre": "Rudiger Grishukov",
+    "tipo_documento": "CC",
+    "numero_documento": "1763671449",
+    "num_registro": "21",
+    "especialidades": [
+      "Oncología",
+      "Traumatología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285457"
+    },
+    "nombre": "Pippy Dufaur",
+    "tipo_documento": "TI",
+    "numero_documento": "6792423615",
+    "num_registro": "22",
+    "especialidades": [
+      "Infectología",
+      "Reumatología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285458"
+    },
+    "nombre": "Benn Hanwell",
+    "tipo_documento": "TI",
+    "numero_documento": "2909611759",
+    "num_registro": "23",
+    "especialidades": []
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285459"
+    },
+    "nombre": "Glennie Ackermann",
+    "tipo_documento": "CC",
+    "numero_documento": "1363124638",
+    "num_registro": "24",
+    "especialidades": [
+      "Pediatría",
+      "Oftalmología",
+      "Otorrinolaringología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28545a"
+    },
+    "nombre": "Samantha Harmson",
+    "tipo_documento": "TI",
+    "numero_documento": "1186542660",
+    "num_registro": "25",
+    "especialidades": [
+      "Traumatología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28545b"
+    },
+    "nombre": "Jacenta Beceril",
+    "tipo_documento": "TI",
+    "numero_documento": "5094411959",
+    "num_registro": "26",
+    "especialidades": [
+      "Infectología",
+      "Ginecología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28545c"
+    },
+    "nombre": "Pearce Thurlby",
+    "tipo_documento": "TI",
+    "numero_documento": "1438825899",
+    "num_registro": "27",
+    "especialidades": [
+      "Ginecología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28545d"
+    },
+    "nombre": "Spence Oliva",
+    "tipo_documento": "TI",
+    "numero_documento": "6240615446",
+    "num_registro": "28",
+    "especialidades": [
+      "Oncología",
+      "Oftalmología",
+      "Pediatría"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28545e"
+    },
+    "nombre": "Agace Rait",
+    "tipo_documento": "TI",
+    "numero_documento": "5152487842",
+    "num_registro": "29",
+    "especialidades": []
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28545f"
+    },
+    "nombre": "Rockwell Casetti",
+    "tipo_documento": "CC",
+    "numero_documento": "8775713812",
+    "num_registro": "30",
+    "especialidades": [
+      "Endocrinología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285460"
+    },
+    "nombre": "Peg Dudman",
+    "tipo_documento": "CC",
+    "numero_documento": "4716345618",
+    "num_registro": "31",
+    "especialidades": []
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285461"
+    },
+    "nombre": "Mitchel Moverley",
+    "tipo_documento": "CC",
+    "numero_documento": "9859376245",
+    "num_registro": "32",
+    "especialidades": [
+      "Infectología",
+      "Neurología",
+      "Pediatría"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285462"
+    },
+    "nombre": "Padget Varga",
+    "tipo_documento": "CC",
+    "numero_documento": "40004648",
+    "num_registro": "33",
+    "especialidades": [
+      "Dermatología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285463"
+    },
+    "nombre": "Micki Dat",
+    "tipo_documento": "TI",
+    "numero_documento": "2603223220",
+    "num_registro": "34",
+    "especialidades": [
+      "Cardiología",
+      "Psiquiatría",
+      "Reumatología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285464"
+    },
+    "nombre": "Maud Lidgett",
+    "tipo_documento": "CC",
+    "numero_documento": "8562332073",
+    "num_registro": "35",
+    "especialidades": []
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285465"
+    },
+    "nombre": "Heidi Meddows",
+    "tipo_documento": "CC",
+    "numero_documento": "9946632333",
+    "num_registro": "36",
+    "especialidades": [
+      "Geriatría",
+      "Pediatría",
+      "Otorrinolaringología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285466"
+    },
+    "nombre": "Clark Meneur",
+    "tipo_documento": "TI",
+    "numero_documento": "6669864603",
+    "num_registro": "37",
+    "especialidades": [
+      "Ginecología",
+      "Neurología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285467"
+    },
+    "nombre": "Jan Spellman",
+    "tipo_documento": "TI",
+    "numero_documento": "5087931160",
+    "num_registro": "38",
+    "especialidades": []
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285468"
+    },
+    "nombre": "Jaquenetta Francombe",
+    "tipo_documento": "CC",
+    "numero_documento": "2202386714",
+    "num_registro": "39",
+    "especialidades": []
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285469"
+    },
+    "nombre": "Birgitta McNaught",
+    "tipo_documento": "CC",
+    "numero_documento": "8437076480",
+    "num_registro": "40",
+    "especialidades": [
+      "Ginecología",
+      "Traumatología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28546a"
+    },
+    "nombre": "Emmit Jesper",
+    "tipo_documento": "CC",
+    "numero_documento": "29415240",
+    "num_registro": "41",
+    "especialidades": []
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28546b"
+    },
+    "nombre": "Patty Lazenbury",
+    "tipo_documento": "CC",
+    "numero_documento": "4177861013",
+    "num_registro": "42",
+    "especialidades": [
+      "Otorrinolaringología",
+      "Traumatología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28546c"
+    },
+    "nombre": "Bathsheba Creasy",
+    "tipo_documento": "TI",
+    "numero_documento": "1168661758",
+    "num_registro": "43",
+    "especialidades": []
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28546d"
+    },
+    "nombre": "Hilary Birdall",
+    "tipo_documento": "CC",
+    "numero_documento": "7743989050",
+    "num_registro": "44",
+    "especialidades": [
+      "Ginecología",
+      "Infectología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28546e"
+    },
+    "nombre": "Lauralee Engelbrecht",
+    "tipo_documento": "TI",
+    "numero_documento": "4757197799",
+    "num_registro": "45",
+    "especialidades": [
+      "Pediatría"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28546f"
+    },
+    "nombre": "Selie Densey",
+    "tipo_documento": "CC",
+    "numero_documento": "9856662833",
+    "num_registro": "46",
+    "especialidades": []
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285470"
+    },
+    "nombre": "Malorie Corpe",
+    "tipo_documento": "TI",
+    "numero_documento": "2508335122",
+    "num_registro": "47",
+    "especialidades": [
+      "Oftalmología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285471"
+    },
+    "nombre": "Calypso Kira",
+    "tipo_documento": "CC",
+    "numero_documento": "5492271665",
+    "num_registro": "48",
+    "especialidades": [
+      "Otorrinolaringología",
+      "Reumatología",
+      "Oncología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285472"
+    },
+    "nombre": "Mason Zohrer",
+    "tipo_documento": "TI",
+    "numero_documento": "9866190994",
+    "num_registro": "49",
+    "especialidades": []
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285473"
+    },
+    "nombre": "Ignacio Prigg",
+    "tipo_documento": "TI",
+    "numero_documento": "3060124980",
+    "num_registro": "50",
+    "especialidades": [
+      "Endocrinología",
+      "Dermatología",
+      "Nefrología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285474"
+    },
+    "nombre": "Durant Titmarsh",
+    "tipo_documento": "CC",
+    "numero_documento": "2328741800",
+    "num_registro": "51",
+    "especialidades": [
+      "Endocrinología",
+      "Cardiología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285475"
+    },
+    "nombre": "Liam Bonde",
+    "tipo_documento": "TI",
+    "numero_documento": "6834779206",
+    "num_registro": "52",
+    "especialidades": [
+      "Urología",
+      "Psiquiatría"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285476"
+    },
+    "nombre": "Webster Peeter",
+    "tipo_documento": "TI",
+    "numero_documento": "2074008681",
+    "num_registro": "53",
+    "especialidades": []
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285477"
+    },
+    "nombre": "Aleece Sawney",
+    "tipo_documento": "CC",
+    "numero_documento": "3237543962",
+    "num_registro": "54",
+    "especialidades": [
+      "Neurología",
+      "Endocrinología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285478"
+    },
+    "nombre": "Ambrosio Josuweit",
+    "tipo_documento": "CC",
+    "numero_documento": "5936628991",
+    "num_registro": "55",
+    "especialidades": [
+      "Oftalmología",
+      "Pediatría",
+      "Infectología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285479"
+    },
+    "nombre": "Madel Oblein",
+    "tipo_documento": "TI",
+    "numero_documento": "6196325618",
+    "num_registro": "56",
+    "especialidades": [
+      "Geriatría",
+      "Otorrinolaringología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28547a"
+    },
+    "nombre": "Marty Melchior",
+    "tipo_documento": "TI",
+    "numero_documento": "2178537765",
+    "num_registro": "57",
+    "especialidades": [
+      "Psiquiatría",
+      "Urología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28547b"
+    },
+    "nombre": "Veda Byre",
+    "tipo_documento": "CC",
+    "numero_documento": "8019367708",
+    "num_registro": "58",
+    "especialidades": [
+      "Geriatría",
+      "Psiquiatría"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28547c"
+    },
+    "nombre": "Abagail Bratt",
+    "tipo_documento": "TI",
+    "numero_documento": "7432861984",
+    "num_registro": "59",
+    "especialidades": [
+      "Reumatología",
+      "Oncología",
+      "Otorrinolaringología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28547d"
+    },
+    "nombre": "Fancie Bohden",
+    "tipo_documento": "TI",
+    "numero_documento": "7005478018",
+    "num_registro": "60",
+    "especialidades": []
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28547e"
+    },
+    "nombre": "Toma Wayper",
+    "tipo_documento": "TI",
+    "numero_documento": "9166567231",
+    "num_registro": "61",
+    "especialidades": [
+      "Infectología",
+      "Otorrinolaringología",
+      "Dermatología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28547f"
+    },
+    "nombre": "Adriena Itzkov",
+    "tipo_documento": "TI",
+    "numero_documento": "2359151493",
+    "num_registro": "62",
+    "especialidades": [
+      "Dermatología",
+      "Ginecología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285480"
+    },
+    "nombre": "Dixie Langtree",
+    "tipo_documento": "TI",
+    "numero_documento": "6143490417",
+    "num_registro": "63",
+    "especialidades": []
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285481"
+    },
+    "nombre": "Bradan Dossetter",
+    "tipo_documento": "CC",
+    "numero_documento": "6849294759",
+    "num_registro": "64",
+    "especialidades": [
+      "Infectología",
+      "Oftalmología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285482"
+    },
+    "nombre": "Domenico Tree",
+    "tipo_documento": "CC",
+    "numero_documento": "1607635468",
+    "num_registro": "65",
+    "especialidades": [
+      "Pediatría"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285483"
+    },
+    "nombre": "Carri Karadzas",
+    "tipo_documento": "TI",
+    "numero_documento": "9229896951",
+    "num_registro": "66",
+    "especialidades": []
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285484"
+    },
+    "nombre": "Wiatt Skures",
+    "tipo_documento": "CC",
+    "numero_documento": "2132397461",
+    "num_registro": "67",
+    "especialidades": [
+      "Dermatología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285485"
+    },
+    "nombre": "Gill Bolton",
+    "tipo_documento": "TI",
+    "numero_documento": "9148174254",
+    "num_registro": "68",
+    "especialidades": []
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285486"
+    },
+    "nombre": "Cathlene Hoppner",
+    "tipo_documento": "TI",
+    "numero_documento": "6335770827",
+    "num_registro": "69",
+    "especialidades": [
+      "Traumatología",
+      "Otorrinolaringología",
+      "Oftalmología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285487"
+    },
+    "nombre": "Kellie Brumby",
+    "tipo_documento": "CC",
+    "numero_documento": "9875165297",
+    "num_registro": "70",
+    "especialidades": [
+      "Psiquiatría",
+      "Urología",
+      "Ginecología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285488"
+    },
+    "nombre": "Felicia Bassindale",
+    "tipo_documento": "CC",
+    "numero_documento": "4618744098",
+    "num_registro": "71",
+    "especialidades": [
+      "Traumatología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285489"
+    },
+    "nombre": "Wynne Le Barre",
+    "tipo_documento": "TI",
+    "numero_documento": "9619557362",
+    "num_registro": "72",
+    "especialidades": [
+      "Nefrología",
+      "Reumatología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28548a"
+    },
+    "nombre": "Donica Galey",
+    "tipo_documento": "TI",
+    "numero_documento": "6630603608",
+    "num_registro": "73",
+    "especialidades": [
+      "Psiquiatría",
+      "Oftalmología",
+      "Pediatría"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28548b"
+    },
+    "nombre": "Brew Ballsdon",
+    "tipo_documento": "TI",
+    "numero_documento": "3301475292",
+    "num_registro": "74",
+    "especialidades": [
+      "Endocrinología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28548c"
+    },
+    "nombre": "Yehudi Hollerin",
+    "tipo_documento": "TI",
+    "numero_documento": "6273079325",
+    "num_registro": "75",
+    "especialidades": []
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28548d"
+    },
+    "nombre": "Dan Bunney",
+    "tipo_documento": "TI",
+    "numero_documento": "6021543436",
+    "num_registro": "76",
+    "especialidades": [
+      "Otorrinolaringología",
+      "Traumatología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28548e"
+    },
+    "nombre": "Filippa Keward",
+    "tipo_documento": "CC",
+    "numero_documento": "1750686667",
+    "num_registro": "77",
+    "especialidades": []
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28548f"
+    },
+    "nombre": "Jean Holdren",
+    "tipo_documento": "CC",
+    "numero_documento": "9388577838",
+    "num_registro": "78",
+    "especialidades": [
+      "Oftalmología",
+      "Neurología",
+      "Dermatología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285490"
+    },
+    "nombre": "Dulcine Simanenko",
+    "tipo_documento": "TI",
+    "numero_documento": "6147329072",
+    "num_registro": "79",
+    "especialidades": [
+      "Urología",
+      "Nefrología",
+      "Oftalmología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285491"
+    },
+    "nombre": "Gabriela Zanitti",
+    "tipo_documento": "TI",
+    "numero_documento": "3475934495",
+    "num_registro": "80",
+    "especialidades": [
+      "Cardiología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285492"
+    },
+    "nombre": "Thorpe MacMeanma",
+    "tipo_documento": "TI",
+    "numero_documento": "4139721983",
+    "num_registro": "81",
+    "especialidades": []
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285493"
+    },
+    "nombre": "Donetta Tiron",
+    "tipo_documento": "CC",
+    "numero_documento": "2510623896",
+    "num_registro": "82",
+    "especialidades": [
+      "Reumatología",
+      "Cardiología",
+      "Infectología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285494"
+    },
+    "nombre": "Lennard Baccas",
+    "tipo_documento": "CC",
+    "numero_documento": "3131574417",
+    "num_registro": "83",
+    "especialidades": [
+      "Geriatría"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285495"
+    },
+    "nombre": "Doti Keppin",
+    "tipo_documento": "CC",
+    "numero_documento": "6945911835",
+    "num_registro": "84",
+    "especialidades": [
+      "Traumatología",
+      "Infectología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285496"
+    },
+    "nombre": "Kikelia Kindon",
+    "tipo_documento": "TI",
+    "numero_documento": "9284792514",
+    "num_registro": "85",
+    "especialidades": [
+      "Geriatría",
+      "Neurología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285497"
+    },
+    "nombre": "Rochella Foan",
+    "tipo_documento": "CC",
+    "numero_documento": "1774337044",
+    "num_registro": "86",
+    "especialidades": [
+      "Oncología",
+      "Cardiología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285498"
+    },
+    "nombre": "Stefanie Cormack",
+    "tipo_documento": "TI",
+    "numero_documento": "2923422186",
+    "num_registro": "87",
+    "especialidades": [
+      "Geriatría",
+      "Infectología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a285499"
+    },
+    "nombre": "Edwina Pickersgill",
+    "tipo_documento": "TI",
+    "numero_documento": "3516408124",
+    "num_registro": "88",
+    "especialidades": [
+      "Neurología",
+      "Pediatría"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28549a"
+    },
+    "nombre": "Viki Muggeridge",
+    "tipo_documento": "TI",
+    "numero_documento": "4575582439",
+    "num_registro": "89",
+    "especialidades": [
+      "Pediatría",
+      "Neurología",
+      "Cardiología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28549b"
+    },
+    "nombre": "Martha Ayce",
+    "tipo_documento": "CC",
+    "numero_documento": "3251125058",
+    "num_registro": "90",
+    "especialidades": []
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28549c"
+    },
+    "nombre": "Shaughn Syncke",
+    "tipo_documento": "CC",
+    "numero_documento": "25968340",
+    "num_registro": "91",
+    "especialidades": [
+      "Dermatología",
+      "Otorrinolaringología",
+      "Oftalmología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28549d"
+    },
+    "nombre": "Madelaine Di Carli",
+    "tipo_documento": "TI",
+    "numero_documento": "5040027131",
+    "num_registro": "92",
+    "especialidades": [
+      "Cardiología",
+      "Otorrinolaringología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28549e"
+    },
+    "nombre": "Rosanna Duran",
+    "tipo_documento": "TI",
+    "numero_documento": "1309310824",
+    "num_registro": "93",
+    "especialidades": [
+      "Oftalmología",
+      "Cardiología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a28549f"
+    },
+    "nombre": "Celka Dorcey",
+    "tipo_documento": "TI",
+    "numero_documento": "218243849",
+    "num_registro": "94",
+    "especialidades": [
+      "Urología",
+      "Ginecología",
+      "Oncología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a2854a0"
+    },
+    "nombre": "Tadeas Stolli",
+    "tipo_documento": "TI",
+    "numero_documento": "246490134",
+    "num_registro": "95",
+    "especialidades": []
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a2854a1"
+    },
+    "nombre": "Arlana Duckworth",
+    "tipo_documento": "CC",
+    "numero_documento": "7321873989",
+    "num_registro": "96",
+    "especialidades": [
+      "Nefrología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a2854a2"
+    },
+    "nombre": "Clari Andell",
+    "tipo_documento": "TI",
+    "numero_documento": "8925441136",
+    "num_registro": "97",
+    "especialidades": []
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a2854a3"
+    },
+    "nombre": "Frederique Jeckells",
+    "tipo_documento": "TI",
+    "numero_documento": "9677989926",
+    "num_registro": "98",
+    "especialidades": []
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a2854a4"
+    },
+    "nombre": "Meryl Insull",
+    "tipo_documento": "CC",
+    "numero_documento": "4584977254",
+    "num_registro": "99",
+    "especialidades": [
+      "Psiquiatría",
+      "Oncología"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "68334660fc13ae442a2854a5"
+    },
+    "nombre": "Jenn Hendriks",
+    "tipo_documento": "CC",
+    "numero_documento": "5185925914",
+    "num_registro": "100",
+    "especialidades": [
+      "Infectología"
+    ]
+  }
+]
