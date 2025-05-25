@@ -11,7 +11,7 @@ for doc in data:
 ids = [registro["_id"]["$oid"] for registro in data]
 
 
-with open("Medico.json", "w", encoding="utf-8") as f:
+with open("Medicos.json", "w", encoding="utf-8") as f:
     json.dump(data, f, indent=2, ensure_ascii=False)
 
 print("ids medicos")
@@ -40,7 +40,6 @@ with open("IPS.json", "w") as f:
 print("ids ips")
 print(", ".join(ips))
 print()
-
 
 with open('Afiliado.json', 'r') as file:
     dataa = json.load(file)
@@ -79,7 +78,10 @@ print()
 print("ids ordenes")
 print(", ".join(ordenes))
 print()
+
 """
+import random
+from datetime import datetime, time, date, timezone
 with open("Servicio.json", 'r', encoding='utf-8') as f:
     datas = json.load(f)
 
@@ -88,7 +90,27 @@ for item in datas:
         for prestacion in item['prestaciones']:
             fecha_str = prestacion.get('fecha')
             if fecha_str and isinstance(fecha_str, str) and len(fecha_str) == 10:
-                prestacion['fecha'] = {"$date": fecha_str + "T00:00:00Z"}
+                try:
+                    
+                    fecha_obj = datetime.strptime(fecha_str, '%Y-%m-%d')
+                    hora_aleatoria = random.randint(8, 20)
+                    minuto_aleatorio = random.randint(0, 59)
+                    fecha_con_hora = datetime.combine(
+                        fecha_obj, time(hora_aleatoria, minuto_aleatorio)
+                    ).replace(tzinfo=timezone.utc)
+
+                    prestacion['fecha'] = {"$date": fecha_con_hora.isoformat()}
+
+                    # Comparar correctamente con la hora actual en UTC
+                    ahora_utc = datetime.now(timezone.utc)
+                    prestacion['finalizado'] = fecha_con_hora < ahora_utc 
+                    
+                    if prestacion.get('afiliado') is None:
+                        prestacion['orden'] = None
+
+                except ValueError:
+                    print(f"Advertencia: La fecha '{fecha_str}' no tiene el formato YYYY-MM-DD y se ignorará.")
+                    continue
 
 with open("Servicios.json", 'w', encoding='utf-8') as f:
     json.dump(datas, f, indent=2, ensure_ascii=False)
