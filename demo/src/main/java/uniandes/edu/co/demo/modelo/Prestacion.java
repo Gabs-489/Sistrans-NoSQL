@@ -12,7 +12,7 @@ import lombok.ToString;
 public class Prestacion {
 
     @Id
-    private String id_prestacion;
+    private Integer id_prestacion;
 
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm")
     private LocalDateTime fecha;
@@ -40,12 +40,12 @@ public class Prestacion {
     public Prestacion(){}
 
 
-    public String getId_prestacion() {
+    public Integer getId_prestacion() {
         return id_prestacion;
     }
 
 
-    public void setId_prestacion(String id_prestacion) {
+    public void setId_prestacion(Integer id_prestacion) {
         this.id_prestacion = id_prestacion;
     }
 

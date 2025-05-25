@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "c769f5e6-c6d1-48dc-bb8b-b3567cd957b9",
+		"_postman_id": "b04a5ba2-dadd-4184-8dd5-4d52f601f4af",
 		"name": "Proyecto Sistrans NoSQL",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "41557320"
+		"_exporter_id": "37686734"
 	},
 	"item": [
 		{
@@ -759,7 +759,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"nombre\": \"Servicio de Terapia Física\",\r\n  \"tipo_servicio\": \"Terapias\",\r\n  \"prestaciones\": [\r\n    {\r\n      \"fecha\": \"01-12-2024 10:30\",\r\n      \"finalizado\": false,\r\n      \"medico\": \"{{medico_id}}\",\r\n      \"ips\": \"{{ips_id}}\",\r\n      \"afiliado\": null,\r\n      \"orden\": null\r\n    },\r\n    {\r\n      \"fecha\": \"02-12-2024 10:30\",\r\n      \"finalizado\": false,\r\n      \"medico\": \"{{medico_id}}\",\r\n      \"ips\": \"{{ips_id}}\",\r\n      \"afiliado\": null ,\r\n      \"orden\": null\r\n    }\r\n  ]\r\n}\r\n",
+							"raw": "{\r\n  \"nombre\": \"Servicio de Terapia Física\",\r\n  \"tipo_servicio\": \"Terapias\",\r\n  \"prestaciones\": [\r\n    {\r\n      \"id_prestacion\":1,\r\n      \"fecha\": \"01-12-2024 10:30\",\r\n      \"finalizado\": false,\r\n      \"medico\": \"{{medico_id}}\",\r\n      \"ips\": \"{{ips_id}}\",\r\n      \"afiliado\": null,\r\n      \"orden\": null\r\n    },\r\n    {\r\n     \"id_prestacion\":2,\r\n      \"fecha\": \"02-12-2024 10:30\",\r\n      \"finalizado\": false,\r\n      \"medico\": \"{{medico_id}}\",\r\n      \"ips\": \"{{ips_id}}\",\r\n      \"afiliado\": null ,\r\n      \"orden\": null\r\n    }\r\n  ]\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1102,7 +1102,7 @@
 			]
 		},
 		{
-			"name": "RF7",
+			"name": "RF7a- b sin orden",
 			"item": [
 				{
 					"name": "Crear Medico",
@@ -1218,7 +1218,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"nombre\": \"Primera consulta\",\r\n  \"tipo_servicio\": \"ConsultaMedicoGeneral\",\r\n  \"prestaciones\": [\r\n    {\r\n      \"fecha\": \"01-08-2025 10:30\",\r\n      \"finalizado\": false,\r\n      \"medico\": \"{{medico_id}}\",\r\n      \"ips\": \"{{ips_id}}\",\r\n      \"afiliado\": null,\r\n      \"orden\": null\r\n    },\r\n    {\r\n      \"fecha\": \"30-05-2025 10:30\",\r\n      \"finalizado\": false,\r\n      \"medico\": \"{{medico_id}}\",\r\n      \"ips\": \"{{ips_id}}\",\r\n      \"afiliado\": null ,\r\n      \"orden\": null\r\n    }\r\n  ]\r\n}\r\n",
+							"raw": "{\r\n  \"nombre\": \"Primera consulta\",\r\n  \"tipo_servicio\": \"ConsultaMedicoGeneral\",\r\n  \"prestaciones\": [\r\n    {\r\n      \"id_prestacion\":1,\r\n      \"fecha\": \"01-08-2025 10:30\",\r\n      \"finalizado\": false,\r\n      \"medico\": \"{{medico_id}}\",\r\n      \"ips\": \"{{ips_id}}\",\r\n      \"afiliado\": null,\r\n      \"orden\": null\r\n    },\r\n    {\r\n      \"id_prestacion\":2,\r\n      \"fecha\": \"30-05-2025 10:30\",\r\n      \"finalizado\": false,\r\n      \"medico\": \"{{medico_id}}\",\r\n      \"ips\": \"{{ips_id}}\",\r\n      \"afiliado\": null ,\r\n      \"orden\": null\r\n    }\r\n  ]\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1338,6 +1338,353 @@
 							"path": [
 								"servicios",
 								"{{servicio_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Afiliado",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/afiliados/{{AFILIADO_id}}/delete",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"afiliados",
+								"{{AFILIADO_id}}",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar IPS",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/IPS/{{ips_id}}/delete",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"IPS",
+								"{{ips_id}}",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Medico",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/medicos/{{medico_id}}/delete",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"medicos",
+								"{{medico_id}}",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Servicio",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/servicios/{{servicio_id}}/delete",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"servicios",
+								"{{servicio_id}}",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RF7b Con orden",
+			"item": [
+				{
+					"name": "Crear Medico",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.globals.set(\"medico_id\", data.numero_documento);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Juan Pérez\",\r\n  \"tipo_documento\": \"CC\",\r\n  \"numero_documento\": \"12345678\",\r\n  \"num_registro\": \"REG-2024-001\",\r\n  \"especialidades\": [\"Cardiología\", \"Medicina Interna\"]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/medicos/new/save",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"medicos",
+								"new",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear IPS",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.globals.set(\"ips_id\", data.nit);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nit\": \"9001234567\",\r\n  \"nombre\": \"Clínica Central\",\r\n  \"direccion\": \"Calle 123 #45-67\",\r\n  \"telefono\": \"555-1234567\",\r\n  \"servicios\": [],\r\n  \"medicos\": [\r\n    \"{{medico_id}}\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/IPS/new/save",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"IPS",
+								"new",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Servicio Con orden",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.globals.set(\"servicio_id2\", data.servicio_id);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Consulta Seguimiento\",\r\n  \"tipo_servicio\": \"ConsultaEspecialista\",\r\n  \"prestaciones\": [\r\n    {\r\n      \"id_prestacion\":1,\r\n      \"fecha\": \"01-08-2025 10:30\",\r\n      \"finalizado\": false,\r\n      \"medico\": \"{{medico_id}}\",\r\n      \"ips\": \"{{ips_id}}\",\r\n      \"afiliado\": null,\r\n      \"orden\": null\r\n    },\r\n    {\r\n      \"id_prestacion\":2,\r\n      \"fecha\": \"30-05-2025 10:30\",\r\n      \"finalizado\": false,\r\n      \"medico\": \"{{medico_id}}\",\r\n      \"ips\": \"{{ips_id}}\",\r\n      \"afiliado\": null ,\r\n      \"orden\": null\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/servicios/new/save",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"servicios",
+								"new",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Afiliado",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.globals.set(\"AFILIADO_id\", data.numero_documento);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Juan Jose Gomez\",\r\n  \"tipo_documento\": \"CC\",\r\n  \"numero_documento\" : \"887654343\",\r\n  \"fecha_nacimiento\": \"01-12-2004\",\r\n  \"direccion\": \"Calle 34 #2a-10\",\r\n  \"telefono\": \"3434234343\",\r\n  \"parentesco\":null,\r\n  \"relacion\":null,\r\n  \"ordenesServicios\": [\r\n    {\r\n      \"id_Orden\": 1,\r\n      \"tipo_orden\": \"Receta\",\r\n      \"fecha\": \"06-12-2025 09:30\",\r\n      \"estado\": \"Vigente\",\r\n      \"cantidad\": 0,\r\n      \"descripcion\": \"Receta de antibiótico\",\r\n      \"medico\": {{medico_id}}\r\n      \r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/afiliados/new/save",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"afiliados",
+								"new",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar Orden",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.globals.set(\"id_Orden\", data.id_Orden);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"tipo_orden\": \"Servicio\",\r\n      \"fecha\": \"02-03-2025 11:30\",\r\n      \"estado\": \"Cancelada\",\r\n      \"cantidad\": 0,\r\n      \"descripcion\": \" Cita postoperatoria\",\r\n      \"medico\": {{medico_id}}\r\n      \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/afiliados/{{AFILIADO_id}}/ordenes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"afiliados",
+								"{{AFILIADO_id}}",
+								"ordenes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agendar con orden",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/servicios/{{servicio_id2}}/prestaciones/01-08-2025 10:30/agendar/{{AFILIADO_id}}/{{id_Orden}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"servicios",
+								"{{servicio_id2}}",
+								"prestaciones",
+								"01-08-2025 10:30",
+								"agendar",
+								"{{AFILIADO_id}}",
+								"{{id_Orden}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Servicio",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/servicios/{{servicio_id2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"servicios",
+								"{{servicio_id2}}"
 							]
 						}
 					},

@@ -155,10 +155,42 @@ public class ServicioController {
                             .body("Error al agendar la prestación: " + e.getMessage());
     }
         return null;
-        
+       
+    }
 
-        
-        
+    @PostMapping("/{id}/prestaciones/{fecha_hora}/agendar/{afiliado}/{id_Orden}")
+    public ResponseEntity<String> AgendarConOrden(@PathVariable("id") String id, @PathVariable("fecha_hora") @DateTimeFormat(pattern = "dd-MM-yyyy HH:mm") LocalDateTime fecha_hora, @PathVariable("afiliado") String afiliado,@PathVariable("id_Orden") String id_Orden) {
+        try{
+            List<Servicio> servicios = servicioRepository.buscarServicios(id);
+            if (servicios == null || servicios.isEmpty()) {
+                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Servicio no encontrado con ID: " + id);
+            } 
+            Servicio servicio = servicios.get(0);
+            String tipo = servicio.getTipo_servicio().name();
+            if (tipo.equalsIgnoreCase("CONSULTAMEDICOGENERAL") &&
+            tipo.equalsIgnoreCase("CONSULTAURGENCIA")) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El servicio no necesita una orden de servicio");
+            }
+
+            List<Prestacion> prestaciones = servicio.getPrestaciones();
+            for (Prestacion p : prestaciones) {
+                if (fecha_hora.equals(p.getFecha()) &&
+                    !p.getFinalizado() &&
+                    (p.getAfiliado() == null || p.getAfiliado().isEmpty()) && (p.getOrden() == null || p.getOrden().isEmpty())) {
+
+                    p.setAfiliado(afiliado);
+                    p.setOrden(id_Orden);
+                    servicioRepository.save(servicio);
+
+                    return ResponseEntity.ok("Prestación agendada correctamente: " + p.getId_prestacion());
+                }
+            }
+            
+        } catch (Exception e) {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                            .body("Error al agendar la prestación: " + e.getMessage());
+    }
+        return null;
        
     }
     

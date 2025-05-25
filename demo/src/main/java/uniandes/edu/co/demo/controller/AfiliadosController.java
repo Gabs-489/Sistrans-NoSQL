@@ -103,11 +103,13 @@ public class AfiliadosController {
     }
 
     @PostMapping("/{id}/ordenes")
-    public ResponseEntity<String> agregarOrden( @PathVariable String id,@RequestBody OrdenServicio nuevaOrden) {
+    public ResponseEntity<Map<String, Object>> agregarOrden( @PathVariable String id,@RequestBody OrdenServicio nuevaOrden) {
         try {
             List<Afiliado> afiliadolist = afiliadoRepository.buscarAfiliado(id);
             if (afiliadolist == null || afiliadolist.isEmpty()) {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Afiliado no encontrado con ID: " + id);
+                Map<String, Object> response = new HashMap<>();
+            response.put("error", "Afiliado no encontrado con ID: " + id);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
             } 
             Afiliado afiliado = afiliadolist.get(0);
             if (afiliado.getOrdenesServicios() == null) {
@@ -123,11 +125,17 @@ public class AfiliadosController {
 
             afiliado.getOrdenesServicios().add(nuevaOrden);
             afiliadoRepository.save(afiliado);
-            return ResponseEntity.status(HttpStatus.CREATED).body("Orden registrada con éxito");
+            Map<String, Object> response = new HashMap<>();
+            response.put("mensaje", "Orden registrada con éxito");
+            response.put("id_Orden", nuevaOrden.getId_Orden());
+
+            return ResponseEntity.status(HttpStatus.CREATED).body(response);
                 
             
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al registrar la orden de servicio: " + e.getMessage());
+            Map<String, Object> errorResponse = new HashMap<>();
+        errorResponse.put("error", "Error al registrar la orden de servicio: " + e.getMessage());
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
         }
 
 
