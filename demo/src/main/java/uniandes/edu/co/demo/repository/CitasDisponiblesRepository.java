@@ -26,14 +26,22 @@ public class CitasDisponiblesRepository {
 
             new Document("$unwind", "$prestaciones"),
 
-            new Document("$match", new Document("$expr",
-                new Document("$gt", List.of("$prestaciones.fecha", "$$NOW"))
-            )),
+            new Document("$match", new Document("$expr", new Document("$and", List.of(
+                new Document("$gte", List.of("$prestaciones.fecha", "$$NOW")),
+                new Document("$lte", List.of(
+                    "$prestaciones.fecha",
+                    new Document("$dateAdd", new Document()
+                        .append("startDate", "$$NOW")
+                        .append("unit", "week")
+                        .append("amount", 4)
+                    )
+                ))
+            )))),
 
             new Document("$lookup", new Document()
                 .append("from", "medicos")
                 .append("let", new Document("medicoIdStr", "$prestaciones.medico"))
-                .append("pipeline", List.of( 
+                .append("pipeline", List.of(
                     new Document("$match", new Document("$expr",
                         new Document("$eq", List.of(
                             "$_id",
@@ -49,7 +57,7 @@ public class CitasDisponiblesRepository {
             new Document("$lookup", new Document()
                 .append("from", "ips")
                 .append("let", new Document("ipsIdStr", "$prestaciones.ips"))
-                .append("pipeline", List.of( 
+                .append("pipeline", List.of(
                     new Document("$match", new Document("$expr",
                         new Document("$eq", List.of(
                             "$_id",
