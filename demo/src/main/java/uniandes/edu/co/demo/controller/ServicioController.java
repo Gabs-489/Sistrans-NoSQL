@@ -1,12 +1,15 @@
 package uniandes.edu.co.demo.controller;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
@@ -21,7 +24,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import uniandes.edu.co.demo.modelo.Prestacion;
 import uniandes.edu.co.demo.modelo.Servicio;
+import uniandes.edu.co.demo.repository.CitasDisponiblesRepository;
 import uniandes.edu.co.demo.repository.ServicioRepository;
+import uniandes.edu.co.demo.repository.ServiciosSolicitadosRepository;
 
 
 @RestController
@@ -194,5 +199,53 @@ public class ServicioController {
        
     }
     
+    @Autowired
+    private CitasDisponiblesRepository CitasDisponiblesRepository;
+
+    @GetMapping("/RFC1/{id}")
+    public ResponseEntity<List<Document>> obtenerCitasDisponibles(@PathVariable("id") String id) {
+        try {
+            List<Document> citas = CitasDisponiblesRepository.findCitasDisponibles(id);
+            if (citas != null && !citas.isEmpty()) {
+                return ResponseEntity.ok(citas);
+            } else {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+    }
+
+    @Autowired
+    private ServiciosSolicitadosRepository serviciosSolicitadosRepository;
+    
+    @GetMapping("/RFC2/{fechaInicio}/{fechaFin}")
+    public ResponseEntity<List<Document>> obtenerServiciosSolicitados(@PathVariable("fechaInicio") String fechaInicio,
+                                                                       @PathVariable("fechaFin") String fechaFin) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd"); 
+        Date fechaI = null;
+        Date fechaF = null;
+        try {
+            fechaI = sdf.parse(fechaInicio);
+            fechaF = sdf.parse(fechaFin);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        }
+
+        if (fechaI == null || fechaF == null || fechaI.after(fechaF)) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        }
+
+        try {
+            List<Document> servicios = serviciosSolicitadosRepository.findServiciosSolicitados(fechaI, fechaF);
+            if (servicios != null && !servicios.isEmpty()) {
+                return ResponseEntity.ok(servicios);
+            } else {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+    }
 
 }
