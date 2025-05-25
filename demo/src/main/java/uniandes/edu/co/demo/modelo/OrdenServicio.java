@@ -1,6 +1,7 @@
 package uniandes.edu.co.demo.modelo;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.Id;
 
@@ -17,8 +18,9 @@ public class OrdenServicio {
 
     private TipoOrden tipo_orden;
 
-    @JsonFormat(pattern = "dd-MM-yyyy")
-    private LocalDate fecha;
+
+    @JsonFormat(pattern = "dd-MM-yyyy HH:mm")
+    private LocalDateTime fecha;
 
     private EstadoOrden estado;
     private Integer cantidad;
@@ -29,7 +31,7 @@ public class OrdenServicio {
     private String servicio;
 
     
-    public OrdenServicio(LocalDate fecha, EstadoOrden estado, String descripcion, String doctor,TipoOrden tipo, String Servicios_ID,Integer cantidad) {
+    public OrdenServicio(LocalDateTime fecha, EstadoOrden estado, String descripcion, String doctor,TipoOrden tipo, String Servicios_ID,Integer cantidad) {
         this.fecha = fecha;
         this.estado = estado;
         this.tipo_orden = tipo;
@@ -61,12 +63,12 @@ public class OrdenServicio {
     }
 
 
-    public LocalDate getFecha() {
+    public LocalDateTime getFecha() {
         return fecha;
     }
 
 
-    public void setFecha(LocalDate fecha) {
+    public void setFecha(LocalDateTime fecha) {
         this.fecha = fecha;
     }
 

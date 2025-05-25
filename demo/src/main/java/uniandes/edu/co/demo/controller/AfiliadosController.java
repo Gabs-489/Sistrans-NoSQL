@@ -1,6 +1,9 @@
 package uniandes.edu.co.demo.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,13 +28,19 @@ public class AfiliadosController {
     private AfiliadoRepository afiliadoRepository;
 
     @PostMapping("/new/save")
-    public ResponseEntity<String>  crearAfiliado (@RequestBody Afiliado afiliado) {
+    public ResponseEntity<Map<String, String>>  crearAfiliado (@RequestBody Afiliado afiliado) {
         try {
 
             afiliadoRepository.insertarAfiliado(afiliado);
-            return new ResponseEntity<>("Afiliado creado exitosamente", HttpStatus.CREATED);
+            Map<String, String> response = new HashMap<>();
+            response.put("mensaje", "Afiliado creado exitosamente");
+            response.put("numero_documento", afiliado.getNumero_documento());
+            return new ResponseEntity<>(response, HttpStatus.CREATED);
         } catch (Exception e) {;
-            return new ResponseEntity<>("Error al crear el afilaido: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+            Map<String, String> response = new HashMap<>();
+            response.put("mensaje", "Error al crear el afiliado: " + e.getMessage());
+            response.put("numero_documento", null);
+            return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 

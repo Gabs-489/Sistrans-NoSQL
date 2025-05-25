@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "ae4c597a-9911-4f82-8dc6-f6665167794d",
+		"_postman_id": "b04a5ba2-dadd-4184-8dd5-4d52f601f4af",
 		"name": "Proyecto Sistrans NoSQL",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "37605172"
+		"_exporter_id": "37686734"
 	},
 	"item": [
 		{
@@ -141,11 +141,461 @@
 		},
 		{
 			"name": "IPS",
-			"item": []
+			"item": [
+				{
+					"name": "Crear Medico",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.globals.set(\"medico_id\", data.numero_documento);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Juan Pérez\",\r\n  \"tipo_documento\": \"CC\",\r\n  \"numero_documento\": \"12345678\",\r\n  \"num_registro\": \"REG-2024-001\",\r\n  \"especialidades\": [\"Cardiología\", \"Medicina Interna\"]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/medicos/new/save",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"medicos",
+								"new",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear IPS",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.globals.set(\"ips_id\", data.nit);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nit\": \"9001234567\",\r\n  \"nombre\": \"Clínica Central\",\r\n  \"direccion\": \"Calle 123 #45-67\",\r\n  \"telefono\": \"555-1234567\",\r\n  \"servicios\": [],\r\n  \"medicos\": [\r\n    \"{{medico_id}}\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/IPS/new/save",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"IPS",
+								"new",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener IPS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/IPS",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"IPS"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener IPS por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/IPS/{{ips_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"IPS",
+								"{{ips_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar IPS",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nit\": \"9001234567\",\r\n  \"nombre\": \"Clínica Central\",\r\n  \"direccion\": \"Calle 23 #45-67\",\r\n  \"telefono\": \"555-1234567\",\r\n  \"servicios\": [],\r\n  \"medicos\": [\r\n    \"{{medico_id}}\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/IPS/{{ips_id}}/edit/save",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"IPS",
+								"{{ips_id}}",
+								"edit",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Medico",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/medicos/{{medico_id}}/delete",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"medicos",
+								"{{medico_id}}",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar IPS",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/IPS/{{ips_id}}/delete",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"IPS",
+								"{{ips_id}}",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Afiliado",
-			"item": []
+			"item": [
+				{
+					"name": "Crear Medico",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.globals.set(\"medico_id\", data.numero_documento);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Juan Pérez\",\r\n  \"tipo_documento\": \"CC\",\r\n  \"numero_documento\": \"12345678\",\r\n  \"num_registro\": \"REG-2024-001\",\r\n  \"especialidades\": [\"Cardiología\", \"Medicina Interna\"]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/medicos/new/save",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"medicos",
+								"new",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Afiliado",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.globals.set(\"AFILIADO_id\", data.numero_documento);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Juan Jose Gomez\",\r\n  \"tipo_documento\": \"CC\",\r\n  \"numero_documento\" : \"887654343\",\r\n  \"fecha_nacimiento\": \"01-12-2004\",\r\n  \"direccion\": \"Calle 34 #2a-10\",\r\n  \"telefono\": \"3434234343\",\r\n  \"parentesco\":null,\r\n  \"relacion\":null,\r\n  \"ordenesServicios\": [\r\n    {\r\n      \"id_Orden\": 1,\r\n      \"tipo_orden\": \"Receta\",\r\n      \"fecha\": \"06-12-2025 09:30\",\r\n      \"estado\": \"Vigente\",\r\n      \"cantidad\": 0,\r\n      \"descripcion\": \"Receta de antibiótico\",\r\n      \"medico\": {{medico_id}}\r\n      \r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/afiliados/new/save",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"afiliados",
+								"new",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Afiliado2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.globals.set(\"afiliado_id2\", data.numero_documento);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Sofia Gomez\",\r\n  \"tipo_documento\": \"CC\",\r\n  \"numero_documento\" : \"101865427\",\r\n  \"fecha_nacimiento\": \"01-12-2024\",\r\n  \"direccion\": \"Calle 34 #2a-10\",\r\n  \"telefono\": \"3434234343\",\r\n  \"parentesco\":{{afiliado_id}},\r\n  \"relacion\":\"Hija\",\r\n  \"ordenesServicios\": [\r\n    {\r\n      \"id_Orden\": 1,\r\n      \"tipo_orden\": \"Receta\",\r\n      \"fecha\": \"06-09-2025 05:30\",\r\n      \"estado\": \"Vigente\",\r\n      \"cantidad\": 0,\r\n      \"descripcion\": \"Receta de medicamentes postoperatorios\",\r\n      \"medico\": {{medico_id}}\r\n      \r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/afiliados/new/save",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"afiliados",
+								"new",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Afiliados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/afiliados",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"afiliados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Afiliado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/afiliados/{{AFILIADO_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"afiliados",
+								"{{AFILIADO_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar afiliado",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Juan Jose Gomez\",\r\n  \"tipo_documento\": \"CC\",\r\n  \"numero_documento\" : \"887654343\",\r\n  \"fecha_nacimiento\": \"01-12-2004\",\r\n  \"direccion\": \"Calle 34 #2a-10\",\r\n  \"telefono\": \"34342377777\",\r\n  \"parentesco\":null,\r\n  \"relacion\":null,\r\n  \"ordenesServicios\": [\r\n    {\r\n      \"id_Orden\": 1,\r\n      \"tipo_orden\": \"Receta\",\r\n      \"fecha\": \"06-12-2025 09:30\",\r\n      \"estado\": \"Vigente\",\r\n      \"cantidad\": 0,\r\n      \"descripcion\": \"Receta de antibiótico\",\r\n      \"medico\": {{medico_id}}\r\n      \r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/afiliados/{{AFILIADO_id}}/edit/save",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"afiliados",
+								"{{AFILIADO_id}}",
+								"edit",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Afiliado",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/afiliados/{{AFILIADO_id}}/delete",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"afiliados",
+								"{{AFILIADO_id}}",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Afiliado 2",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/afiliados/{{afiliado_id2}}/delete",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"afiliados",
+								"{{afiliado_id2}}",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Medico",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/medicos/{{medico_id}}/delete",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"medicos",
+								"{{medico_id}}",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Servicio",
