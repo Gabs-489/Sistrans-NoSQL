@@ -1,11 +1,10 @@
 package uniandes.edu.co.demo.repository;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 import org.bson.Document;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -17,7 +16,6 @@ public class ServiciosSolicitadosRepository {
         this.mongoTemplate = mongoTemplate;
     }
 
-    @Query( value = "{ 'fechainicio': ?0, 'fechafin': ?1 }")
     public List<Document> findServiciosSolicitados(Date fechaInicio, Date fechaFin) {
         
         List<Document> pipeline = List.of(

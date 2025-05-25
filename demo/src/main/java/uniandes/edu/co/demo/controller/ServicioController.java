@@ -1,8 +1,10 @@
 package uniandes.edu.co.demo.controller;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -181,11 +183,24 @@ public class ServicioController {
     private ServiciosSolicitadosRepository serviciosSolicitadosRepository;
     
     @GetMapping("/RFC2/{fechaInicio}/{fechaFin}")
-    public ResponseEntity<List<Document>> obtenerServiciosSolicitados(
-            @PathVariable("fechaInicio") @DateTimeFormat(pattern = "yyyy-MM-dd") java.sql.Date fechaInicio,
-            @PathVariable("fechaFin") @DateTimeFormat(pattern = "yyyy-MM-dd") java.sql.Date fechaFin) {
+    public ResponseEntity<List<Document>> obtenerServiciosSolicitados(@PathVariable("fechaInicio") String fechaInicio,
+                                                                       @PathVariable("fechaFin") String fechaFin) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd"); 
+        Date fechaI = null;
+        Date fechaF = null;
         try {
-            List<Document> servicios = serviciosSolicitadosRepository.findServiciosSolicitados(fechaInicio, fechaFin);
+            fechaI = sdf.parse(fechaInicio);
+            fechaF = sdf.parse(fechaFin);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        }
+
+        if (fechaI == null || fechaF == null || fechaI.after(fechaF)) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        }
+
+        try {
+            List<Document> servicios = serviciosSolicitadosRepository.findServiciosSolicitados(fechaI, fechaF);
             if (servicios != null && !servicios.isEmpty()) {
                 return ResponseEntity.ok(servicios);
             } else {

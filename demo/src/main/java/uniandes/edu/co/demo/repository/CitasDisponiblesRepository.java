@@ -5,7 +5,6 @@ import java.util.List;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -17,7 +16,6 @@ public class CitasDisponiblesRepository {
         this.mongoTemplate = mongoTemplate;
     }
 
-    @Query(value = "{ '_id': ?0 }")
     public List<Document> findCitasDisponibles(String id) {
         
         

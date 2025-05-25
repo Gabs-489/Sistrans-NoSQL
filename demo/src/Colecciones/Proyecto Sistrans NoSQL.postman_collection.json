@@ -1420,6 +1420,78 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "RFC",
+			"item": [
+				{
+					"name": "RFC1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"   pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/servicios/RFC1/68338657fc13ae42a7285093",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"servicios",
+								"RFC1",
+								"68338657fc13ae42a7285093"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RFC2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"   pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/servicios/RFC2/2018-01-01/2030-01-01",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"servicios",
+								"RFC2",
+								"2018-01-01",
+								"2030-01-01"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
