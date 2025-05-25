@@ -41,6 +41,7 @@ print("ids ips")
 print(", ".join(ips))
 print()
 
+
 with open('Afiliado.json', 'r') as file:
     dataa = json.load(file)
 
@@ -53,8 +54,7 @@ for doc in dataa:
 
     # Convertir fechas dentro de ordenesServicio
     for orden in doc.get("ordenesServicios", []):
-        orden["fecha"] = {"$date": orden["fecha"] + "T00:00:00Z"}
-        orden["id_Orden"] = orden["id_Orden"]["$oid"]        
+        orden["fecha"] = {"$date": orden["fecha"] + "T00:00:00Z"}       
 
     if isinstance(doc.get("parentesco"), dict) and "$oid" in doc["parentesco"]:
         doc["parentesco"] = doc["parentesco"]["$oid"]
@@ -65,9 +65,9 @@ afi = [registro["_id"]["$oid"] for registro in dataa]
 
 for registro in dataa: 
     for orden in registro["ordenesServicios"]:
-        id = orden["id_Orden"]
+        id = orden["_id"]
         if id not in ordenes:
-            ordenes.append(id)
+            ordenes.append(str(id))
 # Guardar archivo listo para importar a MongoDB
 with open('Afiliados.json', 'w') as file:
     json.dump(dataa, file, indent=2)
