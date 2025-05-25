@@ -101,7 +101,6 @@ for item in datas:
 
                     prestacion['fecha'] = {"$date": fecha_con_hora.isoformat()}
 
-                    # Comparar correctamente con la hora actual en UTC
                     ahora_utc = datetime.now(timezone.utc)
                     prestacion['finalizado'] = fecha_con_hora < ahora_utc 
                     
