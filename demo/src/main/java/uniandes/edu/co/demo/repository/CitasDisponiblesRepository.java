@@ -23,10 +23,12 @@ public class CitasDisponiblesRepository {
         List<Document> pipeline = List.of(
             new Document("$match", new Document("_id", objectId)),
 
+            new Document("$addFields", new Document("now", new Document("$toDate", "$$NOW"))),
+
             new Document("$unwind", "$prestaciones"),
 
             new Document("$match", new Document("$expr", new Document("$and", List.of(
-                new Document("$gte", List.of("$prestaciones.fecha", "$$NOW")),
+                new Document("$gte", List.of("$prestaciones.fecha", "$now")),
                 new Document("$lte", List.of(
                     "$prestaciones.fecha",
                     new Document("$dateAdd", new Document()
