@@ -117,7 +117,8 @@ public class ServicioController {
 
             List<Prestacion> disponibles = new ArrayList<>();
             for (Prestacion p : servicio.getPrestaciones()) {
-            if (!p.getFecha().isBefore(actual) && !p.getFecha().isAfter(enCuatroSemanas)) {
+            if (!p.getFecha().isBefore(actual) && !p.getFecha().isAfter(enCuatroSemanas) && 
+                (p.getAfiliado() == null || p.getAfiliado().isEmpty())) {
             disponibles.add(p);
             }
         }
