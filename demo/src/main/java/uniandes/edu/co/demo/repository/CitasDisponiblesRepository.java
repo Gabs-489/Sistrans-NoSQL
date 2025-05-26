@@ -31,8 +31,8 @@ public class CitasDisponiblesRepository {
                     "$prestaciones.fecha",
                     new Document("$dateAdd", new Document()
                         .append("startDate", "$$NOW")
-                        .append("unit", "week")
-                        .append("amount", 4)
+                        .append("unit", "day")
+                        .append("amount", 28)
                     )
                 )),
                 new Document("$eq", List.of("$prestaciones.afiliado", null))
