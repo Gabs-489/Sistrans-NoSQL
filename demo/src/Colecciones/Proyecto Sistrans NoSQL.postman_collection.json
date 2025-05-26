@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "f30310e8-10b1-47dd-99ac-f94795ffcd66",
+		"_postman_id": "c50fae6e-f022-405f-8e72-e31f5501df13",
 		"name": "Proyecto Sistrans NoSQL",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "41557320"
+		"_exporter_id": "37686734"
 	},
 	"item": [
 		{
@@ -1791,14 +1791,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/servicios/RFC1/68338657fc13ae42a7285093",
+							"raw": "{{baseUrl}}/servicios/RFC1/68338657fc13ae42a7285092",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"servicios",
 								"RFC1",
-								"68338657fc13ae42a7285093"
+								"68338657fc13ae42a7285092"
 							]
 						}
 					},
