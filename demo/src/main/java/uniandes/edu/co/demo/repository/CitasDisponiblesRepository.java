@@ -18,7 +18,6 @@ public class CitasDisponiblesRepository {
 
     public List<Document> findCitasDisponibles(String id) {
         
-        
         ObjectId objectId = new ObjectId(id);
 
         List<Document> pipeline = List.of(
@@ -35,7 +34,8 @@ public class CitasDisponiblesRepository {
                         .append("unit", "week")
                         .append("amount", 4)
                     )
-                ))
+                )),
+                new Document("$eq", List.of("$prestaciones.afiliado", null))
             )))),
 
             new Document("$lookup", new Document()
