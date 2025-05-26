@@ -18,17 +18,16 @@ public class CitasDisponiblesRepository {
 
     public List<Document> findCitasDisponibles(String id) {
         
+        
         ObjectId objectId = new ObjectId(id);
 
         List<Document> pipeline = List.of(
             new Document("$match", new Document("_id", objectId)),
 
-            new Document("$addFields", new Document("now", new Document("$toDate", "$$NOW"))),
-
             new Document("$unwind", "$prestaciones"),
 
             new Document("$match", new Document("$expr", new Document("$and", List.of(
-                new Document("$gte", List.of("$prestaciones.fecha", "$now")),
+                new Document("$gte", List.of("$prestaciones.fecha", "$$NOW")),
                 new Document("$lte", List.of(
                     "$prestaciones.fecha",
                     new Document("$dateAdd", new Document()
@@ -36,14 +35,15 @@ public class CitasDisponiblesRepository {
                         .append("unit", "day")
                         .append("amount", 28)
                     )
-                )),
-                new Document("$eq", List.of("$prestaciones.afiliado", null))
+                ))
             )))),
+
+            new Document("$match", new Document("prestaciones.afiliado", new Document("$eq", null))),
 
             new Document("$lookup", new Document()
                 .append("from", "medicos")
                 .append("let", new Document("medicoIdStr", "$prestaciones.medico"))
-                .append("pipeline", List.of(
+                .append("pipeline", List.of( 
                     new Document("$match", new Document("$expr",
                         new Document("$eq", List.of(
                             "$_id",
@@ -59,7 +59,7 @@ public class CitasDisponiblesRepository {
             new Document("$lookup", new Document()
                 .append("from", "ips")
                 .append("let", new Document("ipsIdStr", "$prestaciones.ips"))
-                .append("pipeline", List.of(
+                .append("pipeline", List.of( 
                     new Document("$match", new Document("$expr",
                         new Document("$eq", List.of(
                             "$_id",
